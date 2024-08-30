@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import '../globals.css';
 
 const Register = () => {
+  const id="jkjk"
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false); 

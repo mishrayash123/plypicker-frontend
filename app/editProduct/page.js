@@ -8,6 +8,7 @@ import '../globals.css';
 
 const EditProduct = () => {
   const router = useRouter();
+  const id="jkjk"
   const [product, setProduct] = useState({});
 
   const getUserRole = () => {

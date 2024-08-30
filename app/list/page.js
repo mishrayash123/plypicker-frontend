@@ -15,6 +15,7 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 
 const ProductList = () => {
+  const id="jkjk"
   const [products, setProducts] = useState([]);
   const [accept, setAccept] = useState(0);
   const [reject, setReject] = useState(0);

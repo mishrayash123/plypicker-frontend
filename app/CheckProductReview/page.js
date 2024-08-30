@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import '../globals.css';
 
 const CheckProductReview= () => {
+  const id="jkjk"
   const router = useRouter();
   const [product, setProduct] = useState({});
   const [originalProduct, setOriginalProduct] = useState({});
