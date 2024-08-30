@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter } from 'next/router';
 import "react-toastify/dist/ReactToastify.css";
+import '../app/globals.css';
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -98,13 +99,16 @@ const ProductList = () => {
 
   useEffect(() => {
     settoken(localStorage.getItem("token"))
+    if(!localStorage.getItem("token")){
+      router.push('/login');
+    }
     productsList(localStorage.getItem("token"));
   }, []);
 
   return (
     <div className="relative">
       <h1></h1>
-      <div className="flex flex-row-reverse mt-2">
+      <div className="flex flex-row-reverse m-5">
       {getUserRole() === "admin" ? (
           <a href="/PendingReview" className="top-5 mx-10 bg-yellow-600 text-white px-4 py-2 rounded shadow-lg">
             Pending Reviews
@@ -122,7 +126,7 @@ const ProductList = () => {
         </button>
       </div>
 
-      <div className="overflow-y-auto pt-10 mx-auto w-11/12">
+      <div className="overflow-y-auto pt-10 mx-auto w-11/12 p-5">
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
@@ -155,7 +159,7 @@ const ProductList = () => {
             </TableBody>
           </Table>
         </TableContainer>
-        <div className="flex flex-row mt-2 justify-end">
+        <div className="flex flex-row mt-2 justify-end p-5">
           <span className="bg-blue-600 text-white mr-4 px-4 py-2 rounded shadow-lg">
             No. of request : {request}
           </span>

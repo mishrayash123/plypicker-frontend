@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from 'next/router';
+import '../app/globals.css';
 
 const CheckProductReview= () => {
   const router = useRouter();
@@ -67,6 +68,9 @@ const CheckProductReview= () => {
 
     
     fetchProductById(router.query.id);
+    if(!localStorage.getItem("token")){
+      router.push('/login');
+    }
   }, [router.query.id]);
 
 
@@ -106,7 +110,7 @@ const CheckProductReview= () => {
           />
         </div>
       </div>
-        <div className="flex justify-center mt-[10rem]">
+        <div className="flex justify-center mt-[10rem] m-5">
           <a
             href={`/PendingReview`}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import '../app/globals.css';
 
 const EditProduct = () => {
   const router = useRouter();
@@ -90,6 +91,9 @@ const EditProduct = () => {
       }
     };
     fetchProductById(router.query.id);
+    if(!localStorage.getItem("token")){
+      router.push('/login');
+    }
   }, [router.query.id]);
 
   return (
@@ -125,7 +129,7 @@ const EditProduct = () => {
           />
         </div>
       </div>
-        <div className="flex justify-center mt-[10rem]">
+        <div className="flex justify-center mt-[10rem] m-5">
           <button
             type="button"
             className="bg-green-500 hover:bg-green-700 mr-4 text-white font-bold py-2 px-4 rounded"

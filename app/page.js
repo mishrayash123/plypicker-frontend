@@ -1,6 +1,7 @@
 import { Container, Typography, Button, Box, Card, CardContent, Grid } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
+import './globals.css';
 
 const WelcomePage = () => {
   return (

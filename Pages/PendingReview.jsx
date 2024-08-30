@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { useRouter } from 'next/router';
+import '../app/globals.css';
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -11,7 +12,8 @@ import TableRow from "@mui/material/TableRow";
 
 const PendingReviews = () => {
   const [products, setProducts] = useState([]);
-
+  const router = useRouter();
+  
   const reviewsList = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -41,6 +43,9 @@ const PendingReviews = () => {
   };
 
   useEffect(() => {
+    if(!localStorage.getItem("token")){
+      router.push('/login');
+    }
     reviewsList();
   }, []);
 
@@ -109,7 +114,7 @@ const PendingReviews = () => {
 
   return (
     <div className="relative">
-      <div className="flex flex-row-reverse mt-2">
+      <div className="flex flex-row-reverse m-5">
         <a
           href={`/list`}
           className="top-5 mx-10 bg-blue-600 text-white px-4 py-2 rounded shadow-lg"
@@ -118,7 +123,7 @@ const PendingReviews = () => {
         </a>
       </div>
 
-      <div className="overflow-y-auto pt-10 mx-auto w-11/12">
+      <div className="overflow-y-auto pt-10 mx-auto w-11/12 m-5">
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
