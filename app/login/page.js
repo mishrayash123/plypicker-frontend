@@ -113,7 +113,7 @@ const Login = () => {
           Login
         </button>
         <div className="flex mt-6 justify-center text-xs">
-          <p>Don't have an account?</p>
+          <p>New account?</p>
           <a
             href="/register"
             className="text-blue-400 hover:text-blue-500 px-1"
