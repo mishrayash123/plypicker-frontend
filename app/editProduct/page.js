@@ -1,8 +1,10 @@
+'use client'
+
 import React, { useEffect, useState } from "react";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import '../app/globals.css';
+import '../globals.css';
 
 const EditProduct = () => {
   const router = useRouter();

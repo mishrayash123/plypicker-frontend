@@ -1,8 +1,10 @@
+'use client'
+
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import "react-toastify/dist/ReactToastify.css";
-import '../app/globals.css';
+import '../globals.css';
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
