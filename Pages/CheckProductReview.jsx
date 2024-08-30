@@ -13,7 +13,7 @@ const CheckProductReview= () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          `http://localhost:5000/api/product/products/review/${id}`,
+          `https://plypicker-backend-3a25.onrender.com/api/product/products/review/${id}`,
           {
             method: "GET",
             headers: {
@@ -41,7 +41,7 @@ const CheckProductReview= () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          `http://localhost:5000/api/product/reviews/${reviewId}`,
+          `https://plypicker-backend-3a25.onrender.com/api/product/reviews/${reviewId}`,
           {
             method: "GET",
             headers: {

@@ -39,7 +39,7 @@ const ProductList = () => {
         const decodedToken = JSON.parse(atob(token.split('.')[1]));
         const {id, role} = decodedToken;
 
-        const response = await fetch(`http://localhost:5000/api/product/requests/user/count/${id}`, {
+        const response = await fetch(`https://plypicker-backend-3a25.onrender.com/api/product/requests/user/count/${id}`, {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -62,7 +62,7 @@ const ProductList = () => {
 
   const productsList = async (token) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/product/products`, {
+      const response = await fetch(`https://plypicker-backend-3a25.onrender.com/api/product/products`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

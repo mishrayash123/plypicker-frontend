@@ -63,7 +63,7 @@ const Register = () => {
     if (hasError) return;
 
     try {
-        const response = await fetch(`http://localhost:5000/api/user/register`, {
+        const response = await fetch(`https://plypicker-backend-3a25.onrender.com/api/user/register`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

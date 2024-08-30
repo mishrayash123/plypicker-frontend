@@ -23,7 +23,7 @@ const EditProduct = () => {
   const handleSubmit = async() => {
     try {
         const token = localStorage.getItem("token");
-        const response = await fetch(`http://localhost:5000/api/product/review/add`, {
+        const response = await fetch(`https://plypicker-backend-3a25.onrender.com/api/product/review/add`, {
             method: "POST",
             headers: {
               Authorization: `Bearer ${token}`,
@@ -67,7 +67,7 @@ const EditProduct = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          `http://localhost:5000/api/product/products/${productId}`,
+          `https://plypicker-backend-3a25.onrender.com/api/product/products/${productId}`,
           {
             method: "GET",
             headers: {
